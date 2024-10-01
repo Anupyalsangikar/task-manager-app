@@ -30,13 +30,6 @@ jobs:
           name: production-files
           path: ./build
 
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/develop'
-
-    steps:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
